@@ -337,7 +337,7 @@ class HybridSyncModule(reactContext: ReactApplicationContext) :
       if (collections != null) {
         for (i in 0 until collections.size()) {
           val collection = collections.getMap(i)
-          val collectionName = collection.getString("name")
+          val collectionName = collection?.getString("name") ?: "unknown"
           Log.d(TAG, "🔄 Syncing collection: $collectionName")
           
           // Simulate sync progress
