@@ -1,1 +1,1 @@
-{"version":3,"file":"NativeHybridSync.d.ts","sourceRoot":"","sources":["../../../src/NativeHybridSync.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,WAAW,EAAE,MAAM,cAAc,CAAC;AAGhD,MAAM,WAAW,IAAK,SAAQ,WAAW;IACvC,QAAQ,CAAC,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,GAAG,MAAM,CAAC;CACxC;;AAED,wBAAoE"}
+{"version":3,"file":"NativeHybridSync.d.ts","sourceRoot":"","sources":["../../../src/NativeHybridSync.ts"],"names":[],"mappings":"AAEA,MAAM,WAAW,mBAAmB;IAClC,QAAQ,CAAC,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,GAAG,MAAM,CAAC;CACxC;wBAI4B,mBAAmB;AAAhD,wBAAiD"}

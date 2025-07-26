@@ -1,1 +1,1 @@
-{"version":3,"names":["TurboModuleRegistry","getEnforcing"],"sourceRoot":"../../src","sources":["NativeHybridSync.ts"],"mappings":";;AACA,SAASA,mBAAmB,QAAQ,cAAc;AAMlD,eAAeA,mBAAmB,CAACC,YAAY,CAAO,YAAY,CAAC","ignoreList":[]}
+{"version":3,"names":["NativeModules","HybridSync"],"sourceRoot":"../../src","sources":["NativeHybridSync.ts"],"mappings":";;AAAA,SAASA,aAAa,QAAQ,cAAc;AAM5C,MAAM;EAAEC;AAAW,CAAC,GAAGD,aAAa;AAEpC,eAAeC,UAAU","ignoreList":[]}
