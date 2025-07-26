@@ -5,7 +5,7 @@ export interface Spec extends TurboModule {
   multiply(a: number, b: number): number;
   downloadRealmFile(
     downloadUrl: string,
-    destinationPath: string
+    destinationPath?: string
   ): Promise<{
     filePath: string;
     fileSize: number;

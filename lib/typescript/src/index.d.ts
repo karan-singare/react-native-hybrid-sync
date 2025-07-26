@@ -1,5 +1,5 @@
 export declare function multiply(a: number, b: number): number;
-export declare function downloadRealmFile(downloadUrl: string, destinationPath: string): Promise<{
+export declare function downloadRealmFile(downloadUrl: string, destinationPath?: string): Promise<{
     filePath: string;
     fileSize: number;
     wasCompressed?: boolean;
