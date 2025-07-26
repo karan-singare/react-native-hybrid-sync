@@ -1,5 +1,5 @@
 export interface HybridSyncInterface {
-    multiply(a: number, b: number): number;
+    multiply(a: number, b: number): Promise<number>;
 }
 declare const _default: HybridSyncInterface;
 export default _default;

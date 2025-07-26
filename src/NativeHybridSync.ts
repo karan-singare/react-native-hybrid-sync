@@ -1,7 +1,7 @@
 import { NativeModules } from 'react-native';
 
 export interface HybridSyncInterface {
-  multiply(a: number, b: number): number;
+  multiply(a: number, b: number): Promise<number>;
 }
 
 const { HybridSync } = NativeModules;
