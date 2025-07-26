@@ -38,8 +38,9 @@ class HybridSyncModule(reactContext: ReactApplicationContext) :
     return a * b
   }
 
-  override fun downloadRealmFile(downloadUrl: String, destinationPath: String, promise: Promise) {
-    Log.d(TAG, "downloadRealmFile called with URL: $downloadUrl, path: $destinationPath")
+  override fun downloadRealmFile(downloadUrl: String, destinationPath: String?, promise: Promise) {
+    val finalPath = destinationPath ?: "/data/data/com.testsyncapp/files/downloaded-file"
+    Log.d(TAG, "downloadRealmFile called with URL: $downloadUrl, path: $finalPath")
     
     if (isDownloading.get()) {
       Log.w(TAG, "Download already in progress, rejecting request")
@@ -53,9 +54,9 @@ class HybridSyncModule(reactContext: ReactApplicationContext) :
         // Check if URL contains compress=true parameter
         val isCompressedRequest = downloadUrl.contains("compress=true")
         if (isCompressedRequest) {
-          downloadCompressedFileWithProgress(downloadUrl, destinationPath, promise)
+          downloadCompressedFileWithProgress(downloadUrl, finalPath, promise)
         } else {
-          downloadFileWithProgress(downloadUrl, destinationPath, promise)
+          downloadFileWithProgress(downloadUrl, finalPath, promise)
         }
       } finally {
         isDownloading.set(false)
