@@ -3,6 +3,7 @@ package com.hybridsync
 import android.util.Log
 import com.facebook.react.bridge.*
 import com.facebook.react.modules.core.DeviceEventManagerModule
+import com.facebook.react.module.annotations.ReactModule
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -332,6 +333,7 @@ class HybridSyncModule(reactContext: ReactApplicationContext) :
       
       // Simulate sync operations
       val collections = syncConfig.getArray("collections")
+      var syncedCollections = 0
       if (collections != null) {
         for (i in 0 until collections.size()) {
           val collection = collections.getMap(i)
@@ -344,6 +346,7 @@ class HybridSyncModule(reactContext: ReactApplicationContext) :
           // Simulate some processing time
           Thread.sleep(100)
         }
+        syncedCollections = collections.size()
       }
       
       Log.d(TAG, "✅ Data sync completed")
@@ -351,7 +354,7 @@ class HybridSyncModule(reactContext: ReactApplicationContext) :
       
       val result = Arguments.createMap().apply {
         putString("status", "completed")
-        putInt("syncedCollections", collections?.size() ?: 0)
+        putInt("syncedCollections", syncedCollections)
       }
       promise.resolve(result)
       
