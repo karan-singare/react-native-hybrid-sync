@@ -1,9 +1,8 @@
-import { NativeModules } from 'react-native';
+import type { TurboModule } from 'react-native';
+import { TurboModuleRegistry } from 'react-native';
 
-export interface HybridSyncInterface {
-  multiply(a: number, b: number): Promise<number>;
+export interface Spec extends TurboModule {
+  multiply(a: number, b: number): number;
 }
 
-const { HybridSync } = NativeModules;
-
-export default HybridSync as HybridSyncInterface;
+export default TurboModuleRegistry.getEnforcing<Spec>('HybridSync');

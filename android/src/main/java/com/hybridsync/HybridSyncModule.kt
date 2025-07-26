@@ -1,11 +1,11 @@
 package com.hybridsync
 
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactContextBaseJavaModule
-import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.Promise
+import com.facebook.react.module.annotations.ReactModule
 
-class HybridSyncModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
+@ReactModule(name = HybridSyncModule.NAME)
+class HybridSyncModule(reactContext: ReactApplicationContext) :
+  NativeHybridSyncSpec(reactContext) {
 
   override fun getName(): String {
     return NAME
@@ -13,14 +13,8 @@ class HybridSyncModule(reactContext: ReactApplicationContext) : ReactContextBase
 
   // Example method
   // See https://reactnative.dev/docs/native-modules-android
-  @ReactMethod
-  fun multiply(a: Double, b: Double, promise: Promise) {
-    try {
-      val result = a * b
-      promise.resolve(result)
-    } catch (e: Exception) {
-      promise.reject("ERROR", e.message, e)
-    }
+  override fun multiply(a: Double, b: Double): Double {
+    return a * b
   }
 
   companion object {

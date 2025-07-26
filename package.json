@@ -157,7 +157,7 @@
   },
   "create-react-native-library": {
     "languages": "kotlin-objc",
-    "type": "module",
+    "type": "turbo-module",
     "version": "0.52.0"
   }
 }
